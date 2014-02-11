@@ -1,7 +1,30 @@
+//pre-loaded data created and loaded onto page//
+var fakeTasks = [
+  {
+  	description: 'take out trash',
+  	done: false,
+  	id: _.uniqueId()
+  },
+  {
+  	description: 'walk the dog',
+  	done: false,
+  	id: _.uniqueId()
+  },
+  {
+  	description: 'drink the Kool Aide',
+  	done: false,
+  	id: _.uniqueId()
+  }
+]
+//pre-loaded data ENDS//
+
 $(document).ready(function(){
 
 var taskTemplate = _.template($('.task-template').text());  //create a var to reference our template in html
 
+_.each(fakeTasks, function(item){							//prepend pre-loaded data here, b/c it must fall
+    $('.created-tasks').prepend(taskTemplate(item))			//  AFTER taskTemplate is defined	
+  })
 
 $('.add-task').click(function(){						  //when i click on the add-task button	
 
@@ -13,9 +36,9 @@ $('.add-task').click(function(){						  //when i click on the add-task button
   	id: _.uniqueId()
   }
 
-  var renderedTemplate = taskTemplate(todo);
-  
-  $('.created-tasks').prepend(renderedTemplate);
+  var renderedTemplate = taskTemplate(todo);			  //stores the rendered template in a var to contain it
+  														  //  and make it easier to prepend in the next line
+  $('.created-tasks').prepend(renderedTemplate);		  //AT LAST, prepend the user data into the DOM
 })
 
 })
