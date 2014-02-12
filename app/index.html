@@ -37,7 +37,9 @@
                 <input class="enter-task" type="text" placeholder="enter new task..."></input>
                 <button class="add-task">Add</button>
             </div> 
-            <div class="created-tasks"></div>     
+            <div class="created-tasks">
+                
+            </div>     
         </div>
 
 
@@ -47,21 +49,20 @@
         <!--The beestings represent what will be passed into the template from JavaScript main-->
         <script type="text/template" class="task-template">
           <div class="todo-list">
-            <div  class="task">
+            <div  class="task" id="todo-<%= id %>">
+              <span class="id"></span> 
               <div class="description">
                 <%= description %>      
-              </div>
-              <div class="task-buttons">
+              </div>          
                 <button class="task-edit-button">
-                  <span class="glyphicon glyphicon-edit"></span>
+                  <span class="">Edit</span>
                 </button>
                 <button class="task-complete-button">
-                  <span class="glyphicon glyphicon-ok"></span>
+                  <span class="">Complete</span>
                 </button>
-                <button class="task-remove-button"
-                  <span class="glyphicon glyphicon-remove"></span>
-                </button>
-              </div>
+                <button class="task-remove-button">
+                    <span class="">Remove</span> 
+                </button>              
             </div>
           </div>
         </script>
