@@ -33,12 +33,12 @@ $('.created-tasks').on('click', '.task-remove-button', function(){
 
 //show a task on the todo list as complete//
 $('.created-tasks').on('click', '.task-complete-button', function(){
-  $(this).parents('.description').addClass('strikethrough');
+  $(this).siblings('.description').addClass('strikethrough');
 })
 
 //edit a task on the todo list//
-$('.task-edit-button').click(function(){
-
+$('.created-tasks').on('click', '.task-complete-button', function(){
+  
 })
 
 //add a new task to the todo list//
