@@ -37,6 +37,7 @@
                 <input class="enter-task" type="text" placeholder="enter new task..."></input>
                 <button class="add-task">Add</button>
             </div> 
+            <div class="divider"></div>
             <div class="created-tasks">
                 
             </div>     
@@ -51,12 +52,9 @@
           <div class="todo-list">
             <div  class="task" id="todo-<%= id %>">
               <span class="id"></span> 
-              <div class="description">
+              <div class="description" contenteditable="true">
                 <%= description %>      
               </div>          
-                <button class="task-edit-button">
-                  <span class="">Edit</span>
-                </button>
                 <button class="task-complete-button">
                   <span class="">Complete</span>
                 </button>

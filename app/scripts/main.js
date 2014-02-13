@@ -37,8 +37,8 @@ $('.created-tasks').on('click', '.task-complete-button', function(){
 })
 
 //edit a task on the todo list//
-$('.created-tasks').on('click', '.task-complete-button', function(){
-  
+$('.created-tasks').on('click', '.task-edit-button', function(){
+  //var editTask = $(this).siblings('.description').replaceWith('<input> </input>');
 })
 
 //add a new task to the todo list//

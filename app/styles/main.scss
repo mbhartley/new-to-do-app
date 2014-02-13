@@ -36,18 +36,6 @@ body {
     right: 356px;
     margin-top: 20px;   
 }
-
-/* Custom page footer */
-.footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-    margin: 30px 0;
-}
-
 /* Main marketing message and sign up button */
 .jumbotron {
     background-color: #d4e1cb;
@@ -77,6 +65,13 @@ body {
     margin-top: -18px;
 }
 
+.divider {
+    background-color: tomato;
+    opacity: 0.75;
+    width: 700px;
+    height: 44px;
+}
+
 .enter-task {
     width: 400px;
     height: 48px;
@@ -101,7 +96,7 @@ body {
     opacity: 0.5;
     width: 700px;
     height: 100%;
-    border-radius: 6px;
+    border-radius-bottom: 6px;
 }
 
 .created-tasks.strikethrough {
@@ -110,6 +105,8 @@ body {
 
 .task {
     border-top: 1px solid rgb(90, 140, 93);
+
+
 }
 
 .description {
@@ -121,12 +118,6 @@ body {
 .description.strikethrough {
     text-decoration: line-through;
 }
-
-//.task-buttons {
-//    position: absolute;
-//    right: 60px;
-//    margin-top: -30px;
-//}
 
 .task-edit-button, .task-complete-button, .task-remove-button {
     border-radius: 4px;
