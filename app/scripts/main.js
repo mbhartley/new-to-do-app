@@ -26,6 +26,7 @@ _.each(allTasks, function(item){							              //prepend pre-loaded data h
     $('.created-tasks').prepend(taskTemplate(item))			    //  AFTER taskTemplate is defined		
   })
 
+
 //remove a task from the todo list//
 $('.created-tasks').on('click', '.task-remove-button', function(){
   $(this).parent().remove();
@@ -36,10 +37,8 @@ $('.created-tasks').on('click', '.task-complete-button', function(){
   $(this).siblings('.description').addClass('strikethrough');
 })
 
-//edit a task on the todo list//
-$('.created-tasks').on('click', '.task-edit-button', function(){
-  //var editTask = $(this).siblings('.description').replaceWith('<input> </input>');
-})
+
+
 
 //add a new task to the todo list//
 $('.add-task').click(function(){						                //when i click on the add-task button	
@@ -57,14 +56,18 @@ $('.add-task').click(function(){						                //when i click on the add-
   var renderedTemplate = taskTemplate(todo);			          //stores the rendered template in a var to contain it
   														                              //  and make it easier to prepend in the next line
   $('.created-tasks').prepend(renderedTemplate);		        //AT LAST, prepend the user data into the DOM
+
+
+//edit a task on the todo list//
+$('.created-tasks').on('click', '.task-edit-button', function(){
+  var changeTask = $("<input class='edit-task' type='text' id='txtName' value='"+description+"'/>");
+  $(this).siblings('.description').replaceWith(changeTask);
+})
+
+
 })
 
 })
-
-
-
-
-
 
 
 
