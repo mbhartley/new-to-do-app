@@ -18,6 +18,17 @@ var allTasks = [
 ]
 //pre-loaded data ENDS//
 
+$('.edit-task').bind("keypress", {}, keypressInBox);
+
+function keypressInBox(e) {
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if (code == 13) { //Enter keycode                        
+        e.preventDefault();
+
+        $('.testing').submit();
+    }
+};
+
 $(document).ready(function(){
 
 var taskTemplate = _.template($('.task-template').text());  //create a var to reference our template in html
@@ -25,26 +36,18 @@ var taskTemplate = _.template($('.task-template').text());  //create a var to re
 _.each(allTasks, function(item){							              //prepend pre-loaded data here, b/c it must fall
     $('.created-tasks').prepend(taskTemplate(item))			    //  AFTER taskTemplate is defined		
   })
-
-
 //remove a task from the todo list//
 $('.created-tasks').on('click', '.task-remove-button', function(){
   $(this).parent().remove();
 })
-
-//show a task on the todo list as complete//
+//show a task on the todo list as complete w/strikethrough effect//
 $('.created-tasks').on('click', '.task-complete-button', function(){
   $(this).siblings('.description').addClass('strikethrough');
 })
-
-
-
-
 //add a new task to the todo list//
 $('.add-task').click(function(){						                //when i click on the add-task button	
 
   var description = ($('.enter-task').val());			          //the value in the input will be contained in the var description	
-  
   $('.enter-task').val("");                                 //clears the input value on the click event
 
   var todo = {											                        //var to contain user input (description), a unique id
@@ -60,10 +63,9 @@ $('.add-task').click(function(){						                //when i click on the add-
 
 //edit a task on the todo list//
 $('.created-tasks').on('click', '.task-edit-button', function(){
-  var changeTask = $("<input class='edit-task' type='text' id='txtName' value='"+description+"'/>");
+  var changeTask = $("<form class='testing'><input class='edit-task' type='text' id='txtName' value='"+description+"' autofocus/></form>");
   $(this).siblings('.description').replaceWith(changeTask);
 })
-
 
 })
 
