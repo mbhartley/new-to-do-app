@@ -25,9 +25,11 @@ function keypressInBox(e) {
     if (code == 13) { //Enter keycode                        
         e.preventDefault();
 
-        $('.testing').submit();
+        $('.enterEditedTask').submit();
+        
     }
 };
+
 
 $(document).ready(function(){
 
@@ -38,6 +40,10 @@ _.each(allTasks, function(item){							              //prepend pre-loaded data h
   })
 //remove a task from the todo list//
 $('.created-tasks').on('click', '.task-remove-button', function(){
+  //var parentId = $(this).parent().attr('id').split('-')[1];
+  //  allTasks = _.reject(allTasks, function(item){ 
+  //    return item.id == parentId;
+  //  })
   $(this).parent().remove();
 })
 //show a task on the todo list as complete w/strikethrough effect//
@@ -63,10 +69,11 @@ $('.add-task').click(function(){						                //when i click on the add-
 
 //edit a task on the todo list//
 $('.created-tasks').on('click', '.task-edit-button', function(){
-  var changeTask = $("<form class='testing'><input class='edit-task' type='text' id='txtName' value='"+description+"' autofocus/></form>");
+  var changeTask = $("<form class='enterEditedTask'><input class='edit-task' type='text' id='txtName' value='"+description+"' autofocus/></form>");
   $(this).siblings('.description').replaceWith(changeTask);
 })
 
+console.log (allTasks.length);
 })
 
 })
