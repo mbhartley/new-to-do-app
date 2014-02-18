@@ -1,0 +1,25 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class=no-js><!--<![endif]--><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>new todo app</title><meta name=description content=""><meta name=viewport content="width=device-width"><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/vendor.css><link rel=stylesheet href=styles/5a9b2ec7.main.css><body><!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]--><div class=container><div class=header><h3 class=text-muted>new todo app</h3><div class=tagline>created by The Enlightened One</div></div><div class=jumbotron><h1 class=app-title>matt's todos</h1><p class=lead>abandon hope all tasks that enter here</p><input class=enter-task placeholder="enter new task..." autofocus><button class=add-task>Add</button></div><div class=divider></div><div class=created-tasks></div></div><!--Create a template for collecting the user data that is entered into input--><!--It should contain a div for the description of the task, as well as a div--><!--  containing 3 buttons: edit, add and delete--><!--The beestings represent what will be passed into the template from JavaScript main--><script type=text/template class=task-template><div class="todo-list">
+            <div  class="task" id="todo-<% id %>">
+              <span class="id"><%id%></span> 
+              <div class="description">
+                <!--Done: <%completed%>-->
+                <%= description %>      
+              </div>
+                <button class="task-edit-button">
+                  <span class="">Edit</span>
+                </button>          
+                <button class="task-complete-button">
+                  <span class="">Complete</span>
+                </button>
+                <button class="task-remove-button">
+                    <span class="">Remove</span> 
+                </button>              
+            </div>
+          </div></script><script src=scripts/f2c44bb8.vendor.js></script><!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');</script><script src=scripts/aaf74903.plugins.js></script><script src=scripts/9a035a91.main.js></script>
